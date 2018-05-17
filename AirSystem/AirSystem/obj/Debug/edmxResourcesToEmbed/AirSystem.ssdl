@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AirSystem.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="AirSystemStoreContainer">
+    <EntitySet Name="Fabricante" EntityType="AirSystem.Store.Fabricante" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Aeronave" EntityType="AirSystem.Store.Aeronave" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Modelo" EntityType="AirSystem.Store.Modelo" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Companhia" EntityType="AirSystem.Store.Companhia" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Usuarios" EntityType="AirSystem.Store.Usuarios" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="Fabricante">
+    <Key>
+      <PropertyRef Name="id_fabricante" />
+    </Key>
+    <Property Name="id_fabricante" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nome" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="sede" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="pais_origem" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="telefone" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="email" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Aeronave">
+    <Key>
+      <PropertyRef Name="id_aeronave" />
+    </Key>
+    <Property Name="id_aeronave" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_modelo" Type="int" Nullable="false" />
+    <Property Name="id_fabricante" Type="int" Nullable="false" />
+    <Property Name="id_companhia" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="cor" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="descricao" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="som" Type="varbinary(max)" Nullable="false" />
+    <Property Name="foto" Type="varbinary(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Modelo">
+    <Key>
+      <PropertyRef Name="id_modelo" />
+    </Key>
+    <Property Name="id_modelo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="modelo" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="qtd_assento" Type="int" Nullable="false" />
+    <Property Name="origem" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="fabricacao" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="turbinas" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Companhia">
+    <Key>
+      <PropertyRef Name="id_companhia" />
+    </Key>
+    <Property Name="id_companhia" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="companhia" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="cnpj" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="cidade" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="estado" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="telefone" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="email" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="foto" Type="varbinary(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Usuarios">
+    <Key>
+      <PropertyRef Name="id_usuario" />
+    </Key>
+    <Property Name="id_usuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nome" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="sobrenome" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="endereco" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="nascimento" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="numero" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="usuario" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="senha" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="foto" Type="varbinary(max)" Nullable="false" />
+    <Property Name="tipo_usuario" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+</Schema>

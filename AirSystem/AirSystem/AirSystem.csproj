@@ -1,0 +1,264 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D4418AF4-F665-44C6-988A-67EEBD135F1A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AirSystem</RootNamespace>
+    <AssemblyName>AirSystem</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Aeronave.cs">
+      <DependentUpon>AirSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AirSystem.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AirSystem.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AirSystem.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AirSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AirSystem.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AirSystem.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Companhia.cs">
+      <DependentUpon>AirSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="conexao.cs" />
+    <Compile Include="Fabricante.cs">
+      <DependentUpon>AirSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gerenciarAeronave.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gerenciarAeronave.Designer.cs">
+      <DependentUpon>gerenciarAeronave.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gerenciarAviao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gerenciarAviao.Designer.cs">
+      <DependentUpon>gerenciarAviao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gerenciarCompanhia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gerenciarCompanhia.Designer.cs">
+      <DependentUpon>gerenciarCompanhia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="listarAvioes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="listarAvioes.Designer.cs">
+      <DependentUpon>listarAvioes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="listarUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="listarUsuarios.Designer.cs">
+      <DependentUpon>listarUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo.cs">
+      <DependentUpon>AirSystem.tt</DependentUpon>
+    </Compile>
+    <Compile Include="novoFabricante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="novoFabricante.Designer.cs">
+      <DependentUpon>novoFabricante.cs</DependentUpon>
+    </Compile>
+    <Compile Include="novoModelo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="novoModelo.Designer.cs">
+      <DependentUpon>novoModelo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="novoUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="novoUsuario.Designer.cs">
+      <DependentUpon>novoUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="principalAdm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="principalAdm.Designer.cs">
+      <DependentUpon>principalAdm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="principalUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="principalUsuario.Designer.cs">
+      <DependentUpon>principalUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UCAviazinho.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCAviazinho.Designer.cs">
+      <DependentUpon>UCAviazinho.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCListar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCListar.Designer.cs">
+      <DependentUpon>UCListar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Usuarios.cs">
+      <DependentUpon>AirSystem.tt</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gerenciarAeronave.resx">
+      <DependentUpon>gerenciarAeronave.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gerenciarAviao.resx">
+      <DependentUpon>gerenciarAviao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gerenciarCompanhia.resx">
+      <DependentUpon>gerenciarCompanhia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="listarAvioes.resx">
+      <DependentUpon>listarAvioes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="listarUsuarios.resx">
+      <DependentUpon>listarUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="novoFabricante.resx">
+      <DependentUpon>novoFabricante.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="novoModelo.resx">
+      <DependentUpon>novoModelo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="novoUsuario.resx">
+      <DependentUpon>novoUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="principalAdm.resx">
+      <DependentUpon>principalAdm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="principalUsuario.resx">
+      <DependentUpon>principalUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="UCAviazinho.resx">
+      <DependentUpon>UCAviazinho.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCListar.resx">
+      <DependentUpon>UCListar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EntityDeploy Include="AirSystem.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>AirSystem.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="AirSystem.edmx.diagram">
+      <DependentUpon>AirSystem.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AirSystem.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>AirSystem.Context.cs</LastGenOutput>
+      <DependentUpon>AirSystem.edmx</DependentUpon>
+    </Content>
+    <Content Include="AirSystem.edmx.sql" />
+    <Content Include="AirSystem.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>AirSystem.cs</LastGenOutput>
+      <DependentUpon>AirSystem.edmx</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

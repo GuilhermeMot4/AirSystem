@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="AirSystem" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+  <EntityContainer Name="AirSystemContainer" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Fabricante" EntityType="AirSystem.Fabricante" />
+    <EntitySet Name="Aeronave" EntityType="AirSystem.Aeronave" />
+    <EntitySet Name="Modelo" EntityType="AirSystem.Modelo" />
+    <EntitySet Name="Companhia" EntityType="AirSystem.Companhia" />
+    <EntitySet Name="Usuarios" EntityType="AirSystem.Usuarios" />
+  </EntityContainer>
+  <EntityType Name="Fabricante">
+    <Key>
+      <PropertyRef Name="id_fabricante" />
+    </Key>
+    <Property Name="id_fabricante" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nome" Type="String" Nullable="false" />
+    <Property Name="sede" Type="String" Nullable="false" />
+    <Property Name="pais_origem" Type="String" Nullable="false" />
+    <Property Name="telefone" Type="String" Nullable="false" />
+    <Property Name="email" Type="String" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Aeronave">
+    <Key>
+      <PropertyRef Name="id_aeronave" />
+    </Key>
+    <Property Name="id_aeronave" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="id_modelo" Type="Int32" Nullable="false" />
+    <Property Name="id_fabricante" Type="Int32" Nullable="false" />
+    <Property Name="id_companhia" Type="String" Nullable="false" />
+    <Property Name="cor" Type="String" Nullable="false" />
+    <Property Name="descricao" Type="String" Nullable="false" />
+    <Property Name="som" Type="Binary" Nullable="false" />
+    <Property Name="foto" Type="Binary" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Modelo">
+    <Key>
+      <PropertyRef Name="id_modelo" />
+    </Key>
+    <Property Name="id_modelo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="modelo" Type="String" Nullable="false" />
+    <Property Name="qtd_assento" Type="Int32" Nullable="false" />
+    <Property Name="origem" Type="String" Nullable="false" />
+    <Property Name="fabricacao" Type="String" Nullable="false" />
+    <Property Name="turbinas" Type="String" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Companhia">
+    <Key>
+      <PropertyRef Name="id_companhia" />
+    </Key>
+    <Property Name="id_companhia" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="companhia" Type="String" Nullable="false" />
+    <Property Name="cnpj" Type="String" Nullable="false" />
+    <Property Name="cidade" Type="String" Nullable="false" />
+    <Property Name="estado" Type="String" Nullable="false" />
+    <Property Name="telefone" Type="String" Nullable="false" />
+    <Property Name="email" Type="String" Nullable="false" />
+    <Property Name="foto" Type="Binary" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Usuarios">
+    <Key>
+      <PropertyRef Name="id_usuario" />
+    </Key>
+    <Property Name="id_usuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nome" Type="String" Nullable="false" />
+    <Property Name="sobrenome" Type="String" Nullable="false" />
+    <Property Name="endereco" Type="String" Nullable="false" />
+    <Property Name="nascimento" Type="String" Nullable="false" />
+    <Property Name="numero" Type="String" Nullable="false" />
+    <Property Name="usuario" Type="String" Nullable="false" />
+    <Property Name="senha" Type="String" Nullable="false" />
+    <Property Name="foto" Type="Binary" Nullable="false" />
+    <Property Name="tipo_usuario" Type="String" Nullable="false" />
+  </EntityType>
+</Schema>

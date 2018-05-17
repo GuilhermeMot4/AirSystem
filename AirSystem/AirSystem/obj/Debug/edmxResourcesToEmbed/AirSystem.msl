@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="AirSystemStoreContainer" CdmEntityContainer="AirSystemContainer">
+    <EntitySetMapping Name="Fabricante">
+      <EntityTypeMapping TypeName="IsTypeOf(AirSystem.Fabricante)">
+        <MappingFragment StoreEntitySet="Fabricante">
+          <ScalarProperty Name="id_fabricante" ColumnName="id_fabricante" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="sede" ColumnName="sede" />
+          <ScalarProperty Name="pais_origem" ColumnName="pais_origem" />
+          <ScalarProperty Name="telefone" ColumnName="telefone" />
+          <ScalarProperty Name="email" ColumnName="email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Aeronave">
+      <EntityTypeMapping TypeName="IsTypeOf(AirSystem.Aeronave)">
+        <MappingFragment StoreEntitySet="Aeronave">
+          <ScalarProperty Name="id_aeronave" ColumnName="id_aeronave" />
+          <ScalarProperty Name="id_modelo" ColumnName="id_modelo" />
+          <ScalarProperty Name="id_fabricante" ColumnName="id_fabricante" />
+          <ScalarProperty Name="id_companhia" ColumnName="id_companhia" />
+          <ScalarProperty Name="cor" ColumnName="cor" />
+          <ScalarProperty Name="descricao" ColumnName="descricao" />
+          <ScalarProperty Name="som" ColumnName="som" />
+          <ScalarProperty Name="foto" ColumnName="foto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Modelo">
+      <EntityTypeMapping TypeName="IsTypeOf(AirSystem.Modelo)">
+        <MappingFragment StoreEntitySet="Modelo">
+          <ScalarProperty Name="id_modelo" ColumnName="id_modelo" />
+          <ScalarProperty Name="modelo" ColumnName="modelo" />
+          <ScalarProperty Name="qtd_assento" ColumnName="qtd_assento" />
+          <ScalarProperty Name="origem" ColumnName="origem" />
+          <ScalarProperty Name="fabricacao" ColumnName="fabricacao" />
+          <ScalarProperty Name="turbinas" ColumnName="turbinas" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Companhia">
+      <EntityTypeMapping TypeName="IsTypeOf(AirSystem.Companhia)">
+        <MappingFragment StoreEntitySet="Companhia">
+          <ScalarProperty Name="id_companhia" ColumnName="id_companhia" />
+          <ScalarProperty Name="companhia" ColumnName="companhia" />
+          <ScalarProperty Name="cnpj" ColumnName="cnpj" />
+          <ScalarProperty Name="cidade" ColumnName="cidade" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="telefone" ColumnName="telefone" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="foto" ColumnName="foto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuarios">
+      <EntityTypeMapping TypeName="IsTypeOf(AirSystem.Usuarios)">
+        <MappingFragment StoreEntitySet="Usuarios">
+          <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="sobrenome" ColumnName="sobrenome" />
+          <ScalarProperty Name="endereco" ColumnName="endereco" />
+          <ScalarProperty Name="nascimento" ColumnName="nascimento" />
+          <ScalarProperty Name="numero" ColumnName="numero" />
+          <ScalarProperty Name="usuario" ColumnName="usuario" />
+          <ScalarProperty Name="senha" ColumnName="senha" />
+          <ScalarProperty Name="foto" ColumnName="foto" />
+          <ScalarProperty Name="tipo_usuario" ColumnName="tipo_usuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,248 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="AirSystem.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="AirSystemStoreContainer">
+    <EntitySet Name="Fabricante" EntityType="AirSystem.Store.Fabricante" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Aeronave" EntityType="AirSystem.Store.Aeronave" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Modelo" EntityType="AirSystem.Store.Modelo" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Companhia" EntityType="AirSystem.Store.Companhia" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Usuarios" EntityType="AirSystem.Store.Usuarios" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="Fabricante">
+    <Key>
+      <PropertyRef Name="id_fabricante" />
+    </Key>
+    <Property Name="id_fabricante" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nome" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="sede" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="pais_origem" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="telefone" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="email" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Aeronave">
+    <Key>
+      <PropertyRef Name="id_aeronave" />
+    </Key>
+    <Property Name="id_aeronave" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_modelo" Type="int" Nullable="false" />
+    <Property Name="id_fabricante" Type="int" Nullable="false" />
+    <Property Name="id_companhia" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="cor" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="descricao" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="som" Type="varbinary(max)" Nullable="false" />
+    <Property Name="foto" Type="varbinary(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Modelo">
+    <Key>
+      <PropertyRef Name="id_modelo" />
+    </Key>
+    <Property Name="id_modelo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="modelo" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="qtd_assento" Type="int" Nullable="false" />
+    <Property Name="origem" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="fabricacao" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="turbinas" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Companhia">
+    <Key>
+      <PropertyRef Name="id_companhia" />
+    </Key>
+    <Property Name="id_companhia" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="companhia" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="cnpj" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="cidade" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="estado" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="telefone" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="email" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="foto" Type="varbinary(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Usuarios">
+    <Key>
+      <PropertyRef Name="id_usuario" />
+    </Key>
+    <Property Name="id_usuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nome" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="sobrenome" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="endereco" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="nascimento" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="numero" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="usuario" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="senha" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="foto" Type="varbinary(max)" Nullable="false" />
+    <Property Name="tipo_usuario" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="AirSystem" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="AirSystemContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Fabricante" EntityType="AirSystem.Fabricante" />
+          <EntitySet Name="Aeronave" EntityType="AirSystem.Aeronave" />
+          <EntitySet Name="Modelo" EntityType="AirSystem.Modelo" />
+          <EntitySet Name="Companhia" EntityType="AirSystem.Companhia" />
+          <EntitySet Name="Usuarios" EntityType="AirSystem.Usuarios" />
+        </EntityContainer>
+        <EntityType Name="Fabricante">
+          <Key>
+            <PropertyRef Name="id_fabricante" />
+          </Key>
+          <Property Name="id_fabricante" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nome" Type="String" Nullable="false" />
+          <Property Name="sede" Type="String" Nullable="false" />
+          <Property Name="pais_origem" Type="String" Nullable="false" />
+          <Property Name="telefone" Type="String" Nullable="false" />
+          <Property Name="email" Type="String" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Aeronave">
+          <Key>
+            <PropertyRef Name="id_aeronave" />
+          </Key>
+          <Property Name="id_aeronave" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_modelo" Type="Int32" Nullable="false" />
+          <Property Name="id_fabricante" Type="Int32" Nullable="false" />
+          <Property Name="id_companhia" Type="String" Nullable="false" />
+          <Property Name="cor" Type="String" Nullable="false" />
+          <Property Name="descricao" Type="String" Nullable="false" />
+          <Property Name="som" Type="Binary" Nullable="false" />
+          <Property Name="foto" Type="Binary" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Modelo">
+          <Key>
+            <PropertyRef Name="id_modelo" />
+          </Key>
+          <Property Name="id_modelo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="modelo" Type="String" Nullable="false" />
+          <Property Name="qtd_assento" Type="Int32" Nullable="false" />
+          <Property Name="origem" Type="String" Nullable="false" />
+          <Property Name="fabricacao" Type="String" Nullable="false" />
+          <Property Name="turbinas" Type="String" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Companhia">
+          <Key>
+            <PropertyRef Name="id_companhia" />
+          </Key>
+          <Property Name="id_companhia" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="companhia" Type="String" Nullable="false" />
+          <Property Name="cnpj" Type="String" Nullable="false" />
+          <Property Name="cidade" Type="String" Nullable="false" />
+          <Property Name="estado" Type="String" Nullable="false" />
+          <Property Name="telefone" Type="String" Nullable="false" />
+          <Property Name="email" Type="String" Nullable="false" />
+          <Property Name="foto" Type="Binary" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Usuarios">
+          <Key>
+            <PropertyRef Name="id_usuario" />
+          </Key>
+          <Property Name="id_usuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nome" Type="String" Nullable="false" />
+          <Property Name="sobrenome" Type="String" Nullable="false" />
+          <Property Name="endereco" Type="String" Nullable="false" />
+          <Property Name="nascimento" Type="String" Nullable="false" />
+          <Property Name="numero" Type="String" Nullable="false" />
+          <Property Name="usuario" Type="String" Nullable="false" />
+          <Property Name="senha" Type="String" Nullable="false" />
+          <Property Name="foto" Type="Binary" Nullable="false" />
+          <Property Name="tipo_usuario" Type="String" Nullable="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="AirSystemStoreContainer" CdmEntityContainer="AirSystemContainer">
+    <EntitySetMapping Name="Fabricante">
+      <EntityTypeMapping TypeName="IsTypeOf(AirSystem.Fabricante)">
+        <MappingFragment StoreEntitySet="Fabricante">
+          <ScalarProperty Name="id_fabricante" ColumnName="id_fabricante" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="sede" ColumnName="sede" />
+          <ScalarProperty Name="pais_origem" ColumnName="pais_origem" />
+          <ScalarProperty Name="telefone" ColumnName="telefone" />
+          <ScalarProperty Name="email" ColumnName="email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Aeronave">
+      <EntityTypeMapping TypeName="IsTypeOf(AirSystem.Aeronave)">
+        <MappingFragment StoreEntitySet="Aeronave">
+          <ScalarProperty Name="id_aeronave" ColumnName="id_aeronave" />
+          <ScalarProperty Name="id_modelo" ColumnName="id_modelo" />
+          <ScalarProperty Name="id_fabricante" ColumnName="id_fabricante" />
+          <ScalarProperty Name="id_companhia" ColumnName="id_companhia" />
+          <ScalarProperty Name="cor" ColumnName="cor" />
+          <ScalarProperty Name="descricao" ColumnName="descricao" />
+          <ScalarProperty Name="som" ColumnName="som" />
+          <ScalarProperty Name="foto" ColumnName="foto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Modelo">
+      <EntityTypeMapping TypeName="IsTypeOf(AirSystem.Modelo)">
+        <MappingFragment StoreEntitySet="Modelo">
+          <ScalarProperty Name="id_modelo" ColumnName="id_modelo" />
+          <ScalarProperty Name="modelo" ColumnName="modelo" />
+          <ScalarProperty Name="qtd_assento" ColumnName="qtd_assento" />
+          <ScalarProperty Name="origem" ColumnName="origem" />
+          <ScalarProperty Name="fabricacao" ColumnName="fabricacao" />
+          <ScalarProperty Name="turbinas" ColumnName="turbinas" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Companhia">
+      <EntityTypeMapping TypeName="IsTypeOf(AirSystem.Companhia)">
+        <MappingFragment StoreEntitySet="Companhia">
+          <ScalarProperty Name="id_companhia" ColumnName="id_companhia" />
+          <ScalarProperty Name="companhia" ColumnName="companhia" />
+          <ScalarProperty Name="cnpj" ColumnName="cnpj" />
+          <ScalarProperty Name="cidade" ColumnName="cidade" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="telefone" ColumnName="telefone" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="foto" ColumnName="foto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuarios">
+      <EntityTypeMapping TypeName="IsTypeOf(AirSystem.Usuarios)">
+        <MappingFragment StoreEntitySet="Usuarios">
+          <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="sobrenome" ColumnName="sobrenome" />
+          <ScalarProperty Name="endereco" ColumnName="endereco" />
+          <ScalarProperty Name="nascimento" ColumnName="nascimento" />
+          <ScalarProperty Name="numero" ColumnName="numero" />
+          <ScalarProperty Name="usuario" ColumnName="usuario" />
+          <ScalarProperty Name="senha" ColumnName="senha" />
+          <ScalarProperty Name="foto" ColumnName="foto" />
+          <ScalarProperty Name="tipo_usuario" ColumnName="tipo_usuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
